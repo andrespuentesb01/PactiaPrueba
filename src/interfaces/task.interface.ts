@@ -5,3 +5,7 @@ export interface Itask {
   status?: string;
 
 }
+
+export interface Itoken {
+  token?:string;
+}
