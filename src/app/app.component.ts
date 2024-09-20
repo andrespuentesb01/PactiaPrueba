@@ -1,7 +1,7 @@
 import { RestService } from './rest.service';
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { taskService } from '../services/task.service';
+
 import { Itask } from 'src/interfaces/task.interface';
 import {
   concatMap,
@@ -32,7 +32,6 @@ export class AppComponent implements OnInit {
   })
   
   constructor(private RestService:RestService,
-    private taskService:taskService,
     ) {}
   
    
@@ -40,63 +39,12 @@ export class AppComponent implements OnInit {
   //data = Object.values(this.jsonRespuesta)
   ngOnInit() 
   {
-    debugger;
-  
-    this.getFilterData();
-
 
   }
 
-  private getFilterData() {
-    this.taskService
-      .getTask()
-      .pipe(
-        tap((data: Itask) => {
-        
-        })
-      )
-      .subscribe(respuesta=>{
- 
-        this.data = respuesta
-   
-       })
-  }
 
-  updateTask(): void {
-    var task = this.idTask;
-    var idTask = +task
-    this.taskService
-      .updateTask( idTask, this.status)
-      .subscribe(
-        
-      );
-      window.alert("el registro fue actualizado");
-      this.getFilterData();
-  }
 
-  createTask(): void {
-
-    this.taskService
-      .createTask( this.nameOfTask)
-      .subscribe(
-        
-      );
-      window.alert("el registro fue creado");
-      this.getFilterData();
-  }
-
-  deleteTask(): void {
-    var task = this.idTaskDelete;
-    var idTask = +task
-    this.taskService
-      .deleteTask( idTask)
-      .subscribe(
-        
-      );
-      window.alert("el registro fue eliminado");
-      this.getFilterData();
-  }
-  
+    
 }
 
 

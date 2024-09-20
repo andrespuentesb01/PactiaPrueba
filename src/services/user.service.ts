@@ -28,15 +28,22 @@ export class userService {
 
   createUser(
     name: string,
-    lastname: string,
-    cc: string,
-    drivePermision: string
+    password: string
   ): Observable<Itask> {
-    const url = `${this.API_TASK}/createUser?name=${name}&lastname=${lastname}&cc=${cc}&drivePermision=${drivePermision}`;
+    const url = `${this.API_TASK}/createUser?name=${name}&password=${password}`;
     let formData = new FormData();
  
     return genericPost<Itask>(this.http, url, formData);
   }
 
+  deleteUser(id: number): Observable<any> {
+    const url = `${this.API_TASK}/deleteUser?id=${id}`;
+    return this.http.delete<any>(url);
+  }
+
+  updateUser(id: number, name: string): Observable<any> {
+    const url = `${this.API_TASK}/updateUser?id=${id}&name=${name}`;
+    return genericPut<any>(this.http, url, null);
+  }
 
 }

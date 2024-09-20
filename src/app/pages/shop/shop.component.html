@@ -1,0 +1,231 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+
+
+<app-navbar></app-navbar>
+<h3>
+  Shop section, 
+  <small class="text-muted">add in a bag.</small>
+</h3>
+<hr>
+<tr></tr>
+<div class="container">
+  
+  <div class="row">
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">user</label>
+      <select class="form-select" [(ngModel)]="idUser" aria-label="Default select example" 
+    
+      >
+        <option    *ngFor="let delivery of dataFillUsers"
+        [value]="delivery.id"
+        
+      >
+        {{ delivery.name }} 
+      </select>
+      <div id="emailHelp" class="form-text">user.</div>
+    </div>
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">product</label>
+      <select class="form-select" [(ngModel)]="product" aria-label="Default select example"
+       >
+     
+        <option  *ngFor="let products of dataFillProducts"
+        [value]="products.id"
+        
+        
+      >
+        {{ products.description }} 
+      </select>
+      <div id="emailHelp" class="form-text">product.</div>
+  </div>
+  </div>
+    
+  <div class="col">
+    <label for="exampleInputEmail1" class="form-label">quantity</label>
+  <input type="number" min="0" class="form-control" [(ngModel)]='quantity'  id="exampleInputEmail1" aria-describedby="emailHelp">
+  <div id="emailHelp" class="form-text">quantity.</div>
+  </div>
+  <div class="row">
+ 
+    
+  </div>
+</div>
+<tr></tr>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button type="button" (click)="addBag()" style="position: c;" class="btn btn-success">Add to bag</button> 
+    </div>
+    <div class="col">
+      
+  </div>
+  <div class="col">
+   
+</div>
+  </div>
+</div>
+
+<hr>
+<tr></tr>
+<br />
+<div>
+</div>
+<!-------------------------------------------------------->
+
+<h3>  
+  shooping cart, 
+  <small class="text-muted">select your products.</small>
+  <img src = "https://cdn.icon-icons.com/icons2/1880/PNG/512/iconfinder-basket-4341280_120547.png" width="38px" alt="My Happy SVG"/>
+  
+</h3>
+<div class="container">
+  <div class="row">
+    <div class="col">
+<table class="table table-dark">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">user</th>
+      <th scope="col">product</th>
+      <th scope="col">quantity</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let shop of listShop">
+   
+      <td> {{shop.idUser}}</td>
+      <td> {{shop.idProduct}}</td>
+      <td> {{shop.quantity}}</td>
+
+    </tr>
+  
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button type="button" (click)="buy()" style="position: c;" class="btn btn-success">Buy</button> 
+      <button type="button" (click)="ClearBag()" style="position: c;" class="btn btn-danger">Clear</button> 
+    </div>
+    <div class="col">
+      
+  </div>
+  <div class="col">
+   
+</div>
+  </div>
+</div>
+<hr>
+
+
+<!-------------------------------------------------------->
+<h3>
+  Header, 
+  <small class="text-muted">shooping list of all users. </small>
+</h3>
+<div class="container">
+  <div class="row">
+    <div class="col">
+<table class="table table-dark">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">idUser</th>
+      <th scope="col">subTotal</th>
+      <th scope="col">ivaHeader</th>
+      <th scope="col">total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let shop of ShopHeaderList">
+      <td> {{shop.id}}</td>
+      <td> {{shop.idUser}}</td>
+      <td> {{shop.subTotal}}</td>
+      <td> {{shop.ivaHeader}}</td>
+      <td> {{shop.total}}</td>
+    </tr>
+  
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<hr>
+<!-------------------------------------------------------->
+<h3>
+  Details, 
+  <small class="text-muted">shooping list of all users. </small>
+</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">idHeader</label>
+      <input type="number" min="0" class="form-control" [(ngModel)]='idHeader'  id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">idHeader.</div>
+      <button type="button" (click)="getFilterDataShopDetails()" style="position: c;" class="btn btn-success">Filter</button> 
+      <hr>
+    </div>
+    <div class="col">
+      
+  </div>
+  <div class="col">
+   
+  
+</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+<table class="table table-dark">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">idHeader</th>
+      <th scope="col">idProduct</th>
+      <th scope="col">quantity</th>
+      <th scope="col">subtotal</th>
+      <th scope="col">ivaDetail</th>
+      <th scope="col">totalDetail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let shop of ShopDetailList">
+    
+      <td> {{shop.idHeader}}</td>
+      <td> {{shop.idProduct}}</td>
+      <td> {{shop.quantity}}</td>
+      <td> {{shop.subTotal}}</td>
+      <td> {{shop.ivaDetail}}</td>
+      <td> {{shop.totalDetail}}</td>
+   
+    </tr>
+  
+  </tbody>
+</table>
+</div>
+</div>
+
+<hr>
+<img class="card-img-top" src="https://img.freepik.com/vector-gratis/banner-compras-linea-carrito-compras-3d-nubes-e-iconos-sociales-ilustracion-vectorial_548887-100.jpg" alt="Card image cap">
+
+  <!-- Footer -->
+  <footer>
+   
+    LinkTic&nbsp;
+    <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> star.
+      <div class="github-star-badge">
+          <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        
+      </div>
+    </a>
+   
+</footer>
+

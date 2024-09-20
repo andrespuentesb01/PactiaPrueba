@@ -9,27 +9,24 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './pages/main/main.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { CrudComponent } from './pages/crud/crud.component';
-import { CarsComponent } from './pages/cars/cars.component';
-import { RentComponent } from './pages/rent/rent.component';
+import { ProductComponent } from './pages/product/product.component';
+import { ShopComponent } from './pages/shop/shop.component';
 import { UserComponent } from './pages/user/user.component';
-import { SiteComponent } from './pages/site/site.component';
 import { AppInterceptorService } from 'src/services/app-interceptor.service';
 
 const appRoutes:Routes=[
   {path:'main',component:MainComponent},
   {path:'login',component:LoginComponent},
-  {path:'cars',component:CarsComponent},
-  {path:'rent',component:RentComponent},
-  {path:'user',component:UserComponent},
-  {path:'site',component:SiteComponent}
+  {path:'product',component:ProductComponent},
+  {path:'shop',component:ShopComponent},
+  {path:'user',component:UserComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent, MainComponent, NavbarComponent, CrudComponent, CarsComponent, RentComponent,
-    UserComponent, SiteComponent
+    LoginComponent, MainComponent, NavbarComponent, ProductComponent, ShopComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

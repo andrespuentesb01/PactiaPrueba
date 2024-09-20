@@ -22,10 +22,12 @@ export class UserComponent implements OnInit {
  
   public listOfUsers : any;
   public name: string = ""
-  public lastname: string = ""
-  public cc: string = ""
-  public drivePermision: string = ""
-
+  public password: string = ""
+  public idUserDelete: string = ""
+  public isDelete: boolean = false
+  public isUpdate: boolean = false
+  public idUserUpdate: string = ""
+  public nameUpdate: string = ""
 
   miFormulario = new FormGroup({
  
@@ -35,9 +37,7 @@ export class UserComponent implements OnInit {
     private userService:userService,
     ) {}
   
-   
 
-  //data = Object.values(this.jsonRespuesta)
   ngOnInit() 
   {
     debugger;
@@ -69,12 +69,57 @@ export class UserComponent implements OnInit {
   createUser(): void {
 
     this.userService
-      .createUser( this.name, this.lastname, this.cc, this.drivePermision)
+      .createUser( this.name, this.password)
       .subscribe(
         
       );
-  
-      this.getFilterData();
+      window.alert("el registro fue creado");
+      this.ngOnInit();
+  }
+
+  deleteUser(): void {
+    var idUserDelete =+ this.idUserDelete;
+    this.userService
+      .deleteUser( idUserDelete)
+      .subscribe(respuesta=>{
+ 
+        this.isDelete = respuesta
+   
+       });      
+      debugger 
+      if (this.isDelete == true)
+        {
+          window.alert("el registro fue eliminado");
+        }
+       else
+       {
+        window.alert("el registro no existe, revise el idUser");
+       }
+  }
+
+  updateUser(): void {
+    var idUserUpdate =+ this.idUserUpdate;
+    this.userService
+      .updateUser( idUserUpdate, this.nameUpdate)
+      .subscribe(respuesta=>{
+ 
+        this.isUpdate = respuesta
+   
+       });      
+      debugger 
+      if (this.isUpdate == true)
+        {
+          window.alert("el registro fue actualizado");
+        }
+       else
+       {
+        window.alert("el registro no existe, revise el idUser");
+       }
+  }
+
+  selectRow(row: Number): void {
+    debugger;
+    var a = row;
   }
 
   

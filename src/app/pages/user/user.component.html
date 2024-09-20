@@ -19,22 +19,15 @@
     <div id="emailHelp" class="form-text">name.</div>
     </div>
     <div class="col">
-      <label for="exampleInputEmail1" class="form-label">lastname</label>
-    <input type="email" class="form-control"[(ngModel)]='lastname'  id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">lastname.</div>
+      <label for="exampleInputEmail1" class="form-label">password</label>
+    <input type="password" class="form-control"[(ngModel)]='password'  id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">password.</div>
     </div>
+ 
   </div>
   <div class="row">
-    <div class="col">
-      <label for="exampleInputEmail1" class="form-label">cc</label>
-    <input type="email" class="form-control"[(ngModel)]='cc'  id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">cc..</div>
-    </div>
-    <div class="col">
-      <label for="exampleInputEmail1" class="form-label">drivePermission</label>
-    <input type="email" class="form-control"[(ngModel)]='drivePermision'  id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">drivePermission.</div>
-    </div>
+    
+   
   </div>
 </div>
 <tr></tr>
@@ -63,19 +56,15 @@
 <table class="table table-dark">
   <thead class="thead-dark">
     <tr>
+      <th scope="col">id</th>
       <th scope="col">name</th>
-      <th scope="col">lastname</th>
-      <th scope="col">cc</th>
-      <th scope="col">drive permission</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let users of listOfUsers">
-    
-      <td> {{users.name}}</td>
-      <td> {{users.lastname}}</td>
-      <td>{{users.cc}}</td>
-      <td>{{users.drivePermision}}</td>
+     <td> {{users.id}}</td>
+     <td> {{users.name}}</td>
+
     </tr>
   
   </tbody>
@@ -84,11 +73,70 @@
 </div>
 </div>
 <hr>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">idUser</label>
+    <input type="email" class="form-control"[(ngModel)]='idUserDelete'  id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">id.</div>
+    </div>
+  
+ 
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <button type="button" style="position: c;" (click)="deleteUser()"  class="btn btn-danger">Delete</button> 
+        </div>
+        <div class="col">
+          
+      </div>
+      <div class="col">
+       
+    </div>
+      </div>
+    </div>
+    <hr> 
+
+    <hr>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">idUser</label>
+    <input type="email" class="form-control"[(ngModel)]='idUserUpdate'  id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">id.</div>
+    </div>
+
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">nameUpdate</label>
+    <input type="email" class="form-control"[(ngModel)]='nameUpdate'  id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">name.</div>
+    </div>
+  
+ 
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <button type="button" style="position: c;" (click)="updateUser()"  class="btn btn-primary">Update</button> 
+        </div>
+        <div class="col">
+          
+      </div>
+      <div class="col">
+       
+    </div>
+      </div>
+    </div>
+    <hr> 
+
 <img class="card-img-top" src="https://www.teletrans.com/wp-content/uploads/2021/01/luxury-car-rental.jpg" alt="Card image cap">
   <!-- Footer -->
   <footer>
    
-    MainSoft&nbsp;
+    linkTic&nbsp;
     <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> star.
       <div class="github-star-badge">
           <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>

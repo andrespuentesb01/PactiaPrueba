@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
-import { CrudComponent } from 'src/app/pages/crud/crud.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductComponent } from './product.component';
 
 
 @NgModule({
@@ -19,6 +19,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule, FormsModule, ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [CrudComponent]
+  bootstrap: [ProductComponent]
 })
-export class crudModule { }
+export class productModule { }

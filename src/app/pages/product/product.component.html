@@ -1,0 +1,100 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+
+
+<app-navbar></app-navbar>
+<h3>
+  product, 
+  <small class="text-muted">management the product</small>
+</h3>
+<hr>
+<tr></tr>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">description</label>
+    <input type="email" class="form-control" [(ngModel)]='description' id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">description.</div>
+    </div>
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">price</label>
+    <input type="us" class="form-control" min="0" [(ngModel)]='price'  id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">price.</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">iva Percent</label>
+    <input type="number" max="100" min="0" class="form-control" [(ngModel)]='ivaPercent'  id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">iva.</div>
+    </div>
+    <div class="col">
+      <label for="exampleInputEmail1" class="form-label">stock</label>
+    <input type="number" min="0" class="form-control" [(ngModel)]='stock'  id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">stock.</div>
+    </div>
+  </div>
+</div>
+<tr></tr>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button type="button" (click)="createTask()" style="position: c;" class="btn btn-success">Add +</button> 
+    </div>
+    <div class="col">
+      
+  </div>
+  <div class="col">
+   
+</div>
+  </div>
+</div>
+
+<hr>
+<tr></tr>
+<br />
+<div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+<table class="table table-dark">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">description</th>
+      <th scope="col">price</th>
+      <th scope="col">IVA</th>
+      <th scope="col">stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of dataProduct">
+    
+      <td> {{task.description}}</td>
+      <td> {{task.price}}</td>
+      <td>{{task.ivaPercent}}</td>
+      <td>{{task.stock}}</td>
+    </tr>
+  
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<hr>
+<img class="card-img-top" src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/11/50-regalos-tecnologicos-menos-50-euros.jpg?tf=3840x" alt="Card image cap">
+  <!-- Footer -->
+  <footer>
+   
+    LinkTic&nbsp;
+    <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> star.
+      <div class="github-star-badge">
+          <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        
+      </div>
+    </a>
+   
+</footer>
+

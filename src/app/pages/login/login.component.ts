@@ -25,10 +25,8 @@ import {
 export class LoginComponent implements OnInit {
   public user: string = "";
   public password: string = "";
-  public nameOfTask: string = "";
-  public token2: string = "";
   public data : any;
-  public token: any;
+
 
   miFormulario = new FormGroup({
   
@@ -39,13 +37,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login(): void {
-    debugger;
-    
+
     this.validate();
   }
 
   private validate() {
-   debugger;
 
     this.loginService
     .validatePassword(this.user, this.password)
@@ -55,15 +51,23 @@ export class LoginComponent implements OnInit {
         })
       )
       .subscribe(respuesta=>{    
-   
+        debugger;
         let name1:string = respuesta.token!;
         window.localStorage.setItem("token", name1 );
        })
     
     debugger;    
     
-   
-    this.router.navigate(["/rent"]);
+    let valor = localStorage.getItem('token');
+    if(valor != "")
+      {
+        this.router.navigate(["/shop"]);
+      }
+    else
+    {
+      this.router.navigate(["/login"]);
+    
+    }
   }
   
 }

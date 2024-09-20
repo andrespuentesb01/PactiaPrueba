@@ -5,7 +5,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { RentComponent } from './rent.component';
+import { ShopComponent } from './shop.component';
 
 
 @NgModule({
@@ -19,6 +19,6 @@ import { RentComponent } from './rent.component';
     HttpClientModule, FormsModule, ReactiveFormsModule, 
   ],
   providers: [],
-  bootstrap: [RentComponent]
+  bootstrap: [ShopComponent]
 })
 export class carsModule { }
